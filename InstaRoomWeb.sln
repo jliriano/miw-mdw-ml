@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaRoomWeb", "InstaRoomWeb\InstaRoomWeb.csproj", "{624A4E8A-5818-4774-A68B-75A74EA33323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaRoomWeb.Tests", "InstaRoomWeb.Tests\InstaRoomWeb.Tests.csproj", "{7AA9FE59-E4D0-4E97-9A7A-9AD8DC94F34B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{624A4E8A-5818-4774-A68B-75A74EA33323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624A4E8A-5818-4774-A68B-75A74EA33323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624A4E8A-5818-4774-A68B-75A74EA33323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624A4E8A-5818-4774-A68B-75A74EA33323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA9FE59-E4D0-4E97-9A7A-9AD8DC94F34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA9FE59-E4D0-4E97-9A7A-9AD8DC94F34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA9FE59-E4D0-4E97-9A7A-9AD8DC94F34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA9FE59-E4D0-4E97-9A7A-9AD8DC94F34B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53DE142B-40B2-453B-A17A-2DA32CC8B6BF}
+	EndGlobalSection
+EndGlobal
