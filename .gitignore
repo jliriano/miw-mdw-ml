@@ -256,3 +256,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/InstaRoomWeb/App_Data/aspnet-InstaRoomWeb-20190407063603.mdf
+/InstaRoomWeb/App_Data/aspnet-InstaRoomWeb-20190407063603_log.ldf
