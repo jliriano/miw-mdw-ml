@@ -48,10 +48,11 @@ namespace InstaRoomWeb.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,tipo_habitacion,servicios,precio_hr,precio_dia,HotelId")] Habitacion habitacion)
+        public ActionResult Create([Bind(Include = "Id,tipo_habitacion,servicios,precio_hr,precio_dia,HotelId,Opcion")] Habitacion habitacion)
         {
             if (ModelState.IsValid)
             {
+                habitacion.tipo_habitacion =""+ habitacion.Opcion;
                 db.Habitaciones.Add(habitacion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,8 +62,6 @@ namespace InstaRoomWeb.Controllers
             return View(habitacion);
         }
 
-      
-        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
