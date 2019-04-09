@@ -46,6 +46,7 @@ namespace InstaRoomWeb.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles ="Gestor")]
         public ActionResult Create([Bind(Include = "Id,nombre_hotel,nombre_director,direccion_postal,imagen_hotel")] Hotel hotel)
         {
             if (ModelState.IsValid)
