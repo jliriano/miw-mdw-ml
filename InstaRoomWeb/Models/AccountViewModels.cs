@@ -58,7 +58,7 @@ namespace InstaRoomWeb.Models
         [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
-        [Display(Name = "Recordar?")]
+        [Display(Name = "Recordar contraseña")]
         public bool RememberMe { get; set; }
     }
 
