@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/08/2019 11:15:16
--- Generated from EDMX file: D:\Proyectos Master\Proyectos_MDW\miw-mdw-ml\InstaRoomWeb\Models\Models.edmx
+-- Date Created: 04/09/2019 18:24:05
+-- Generated from EDMX file: C:\proyectoReserva\miw-mdw-ml\InstaRoomWeb\Models\Models.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Hoteles];
+USE [reservaHotel];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_HotelHabitacion]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Habitaciones] DROP CONSTRAINT [FK_HotelHabitacion];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Hoteles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Hoteles];
+GO
+IF OBJECT_ID(N'[dbo].[Habitaciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Habitaciones];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
