@@ -30,8 +30,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tipo_habitacion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="servicios" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="precio_hr" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="precio_dia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="precio_hr" Type="bigint" Nullable="false" />
+    <Property Name="precio_dia" Type="bigint" Nullable="false" />
     <Property Name="HotelId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="HotelHabitacion">
@@ -76,8 +76,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipo_habitacion" Type="String" Nullable="false" />
           <Property Name="servicios" Type="String" Nullable="false" />
-          <Property Name="precio_hr" Type="String" Nullable="false" />
-          <Property Name="precio_dia" Type="String" Nullable="false" />
+          <Property Name="precio_hr" Type="Int64" Nullable="false" />
+          <Property Name="precio_dia" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Hotel" Relationship="Models.HotelHabitacion" FromRole="Habitacion" ToRole="Hotel" />
           <Property Name="HotelId" Type="Int32" Nullable="false" />
         </EntityType>

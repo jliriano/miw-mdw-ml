@@ -10,18 +10,18 @@ using InstaRoomWeb.Models;
 
 namespace InstaRoomWeb.Controllers
 {
-    public class HabitacionController : Controller
+    public class HabitacionesController : Controller
     {
         private ModelsContainer db = new ModelsContainer();
 
-        // GET: Habitacion
+        // GET: Habitaciones
         public ActionResult Index()
         {
             var habitaciones = db.Habitaciones.Include(h => h.Hotel);
             return View(habitaciones.ToList());
         }
 
-        // GET: Habitacion/Details/5
+        // GET: Habitaciones/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,14 +36,14 @@ namespace InstaRoomWeb.Controllers
             return View(habitacion);
         }
 
-        // GET: Habitacion/Create
+        // GET: Habitaciones/Create
         public ActionResult Create()
         {
             ViewBag.HotelId = new SelectList(db.Hoteles, "Id", "nombre_hotel");
             return View();
         }
 
-        // POST: Habitacion/Create
+        // POST: Habitaciones/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -53,7 +53,7 @@ namespace InstaRoomWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                habitacion.tipo_habitacion =""+ habitacion.Opcion;
+                habitacion.tipo_habitacion = "" + habitacion.Opcion;
                 db.Habitaciones.Add(habitacion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
