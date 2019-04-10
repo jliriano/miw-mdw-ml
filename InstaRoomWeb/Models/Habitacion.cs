@@ -17,8 +17,8 @@ namespace InstaRoomWeb.Models
         public int Id { get; set; }
         public string tipo_habitacion { get; set; }
         public string servicios { get; set; }
-        public string precio_hr { get; set; }
-        public string precio_dia { get; set; }
+        public long precio_hr { get; set; }
+        public long precio_dia { get; set; }
         public int HotelId { get; set; }
     
         public virtual Hotel Hotel { get; set; }
