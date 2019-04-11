@@ -1,0 +1,55 @@
+﻿@model InstaRoomWeb.Models.FormModels.ReservaFormModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Reserva</h4>
+    <hr />
+    <div class="form-group">
+        @Html.Label("check-in", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" name="check_in_date" min="@(DateTime.Now.ToString("yyyy-MM-dd"))" required> <input type="number" name="check_in_hour" min="0" max="24" required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("check-out", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" name="check_out_date" min="@(DateTime.Now.ToString("yyyy-MM-dd"))" required> <input type="number" name="check_out_hour" min="0" max="23" required/>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        if (Model.validationError)
+        {
+            <p class="text-danger">La fecha de entrada debe ser anterior a la de salida</p>
+        }
+        else if (Model.availabilityError)
+        {
+                <p class="text-danger">Habitación no disponible en esas fechas</p>
+        }
+    }
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
