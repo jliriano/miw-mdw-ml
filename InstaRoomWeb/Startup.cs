@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
+using System.Globalization;
 
 [assembly: OwinStartupAttribute(typeof(InstaRoomWeb.Startup))]
 namespace InstaRoomWeb
@@ -13,6 +14,10 @@ namespace InstaRoomWeb
         {
             ConfigureAuth(app);
             createRolesandUsers();
+
+            System.Globalization.CultureInfo customCulture = new CultureInfo("es-ES");
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+            CultureInfo.DefaultThreadCurrentCulture = customCulture;
         }
 
         private void createRolesandUsers()
