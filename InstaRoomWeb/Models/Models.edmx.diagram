@@ -8,6 +8,10 @@
         <EntityTypeShape EntityType="Models.Hotel" Width="1.5" PointX="0.5" PointY="1" />
         <EntityTypeShape EntityType="Models.Habitacion" Width="1.5" PointX="3.625" PointY="1" />
         <AssociationConnector Association="Models.HotelHabitacion" />
+        <EntityTypeShape EntityType="Models.AspNetUser" Width="1.5" PointX="3.625" PointY="3.75" />
+        <EntityTypeShape EntityType="Models.Reserva" Width="1.5" PointX="6.375" PointY="1.375" />
+        <AssociationConnector Association="Models.ReservaAspNetUser" />
+        <AssociationConnector Association="Models.ReservaHabitacion" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

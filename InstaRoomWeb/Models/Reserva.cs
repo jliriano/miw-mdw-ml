@@ -15,37 +15,26 @@ namespace InstaRoomWeb.Models
 using System;
     using System.Collections.Generic;
     
-public partial class Habitacion
+public partial class Reserva
 {
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Habitacion()
-    {
-
-        this.Reservas = new HashSet<Reserva>();
-
-    }
-
 
     public int Id { get; set; }
 
-    public string tipo_habitacion { get; set; }
+    public System.DateTime check_in { get; set; }
 
-    public string servicios { get; set; }
+    public System.DateTime check_out { get; set; }
 
     public double precio_hr { get; set; }
 
     public double precio_dia { get; set; }
 
-    public int HotelId { get; set; }
+    public double precio_total { get; set; }
 
 
 
-    public virtual Hotel Hotel { get; set; }
+    public virtual AspNetUser AspNetUser { get; set; }
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Reserva> Reservas { get; set; }
+    public virtual Habitacion Habitacion { get; set; }
 
 }
 
