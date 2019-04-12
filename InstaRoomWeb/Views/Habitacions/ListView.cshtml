@@ -1,0 +1,54 @@
+﻿@model IEnumerable<InstaRoomWeb.Models.Habitacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Tipo de Habitación
+        </th>
+        <th>
+            Servicios
+        </th>
+        <th>
+            Precio por hora
+        </th>
+        <th>
+            Precio por día
+        </th>
+        <th>
+            Hotel
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_habitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio_hr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio_dia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel.nombre_hotel)
+            </td>
+            <td>
+                @Html.ActionLink("Reservar", "Create", "Reservas", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

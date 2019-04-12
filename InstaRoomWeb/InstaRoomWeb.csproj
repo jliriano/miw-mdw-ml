@@ -176,7 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HabitacionesController.cs" />
+    <Compile Include="Controllers\HabitacionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -299,10 +299,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Hotels\Create.cshtml" />
     <Content Include="Views\Hotels\Index.cshtml" />
-    <Content Include="Views\Habitaciones\Create.cshtml" />
-    <Content Include="Views\Habitaciones\Index.cshtml" />
     <Content Include="Views\Reservas\Create.cshtml" />
     <Content Include="Views\Reservas\Payment.cshtml" />
+    <Content Include="Views\Habitacions\Create.cshtml" />
+    <Content Include="Views\Habitacions\Index.cshtml" />
+    <Content Include="Views\Habitacions\ListView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

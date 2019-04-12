@@ -5,10 +5,10 @@
 }
 
 <h2>Index</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
 <table class="table">
     <tr>
         <th>
@@ -47,9 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Hotel.nombre_hotel)
             </td>
-            <td>
-                @Html.ActionLink("Reservar", "Create", "Reservas", new { id = item.Id },null)
-            </td>
+          
         </tr>
     }
 
