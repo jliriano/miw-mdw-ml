@@ -74,6 +74,7 @@ namespace InstaRoomWeb.Controllers
           
         }
 
+        // GET: Reservas/ViewReserva
         public ActionResult ViewReserva([Bind(Include = "Id,check_in,check_out,precio_hr,precio_dia,precio_total,nombre_hotel")]  ReservaSess r)
         {
             // Reserva reserva = db.Reservas.Find(id);
