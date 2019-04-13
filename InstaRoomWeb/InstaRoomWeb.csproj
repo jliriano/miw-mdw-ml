@@ -188,6 +188,7 @@
     <Compile Include="Models\AspNetUser.cs">
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Binder\ReservaBinder.cs" />
     <Compile Include="Models\FormModels\ReservaFormModel.cs" />
     <Compile Include="Models\Habitacion.cs">
       <DependentUpon>Models.tt</DependentUpon>
@@ -218,6 +219,7 @@
     <Compile Include="Models\Reserva.cs">
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Session\ReservaSess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -304,6 +306,7 @@
     <Content Include="Views\Habitacions\Create.cshtml" />
     <Content Include="Views\Habitacions\Index.cshtml" />
     <Content Include="Views\Habitacions\ListView.cshtml" />
+    <Content Include="Views\Reservas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,12 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using InstaRoomWeb.Models;
 using InstaRoomWeb.Models.FormModels;
+using InstaRoomWeb.Models.Session;
 
 namespace InstaRoomWeb.Controllers
 {
     public class ReservasController : Controller
     {
         private ModelsContainer db = new ModelsContainer();
+        public Reserva reserva = new Reserva();
+
+        public ActionResult Index()
+        { 
+            return View(db.Reservas.ToList());
+        }
 
         // GET: Reservas/Create
         public ActionResult Create(int? id)
@@ -25,7 +32,7 @@ namespace InstaRoomWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create(int? id, [Bind(Include = "check_in_date, check_in_hour,check_out_date, check_out_hour")] ReservaFormModel reservaFormModel)
+        public ActionResult Create(int? id, [Bind(Include = "check_in_date, check_in_hour,check_out_date, check_out_hour")] ReservaFormModel reservaFormModel, ReservaSess r)
         {
             if (reservaFormModel == null) return HttpNotFound();
             reservaFormModel.validationError = !ModelState.IsValid || !reservaFormModel.isValid();
@@ -38,25 +45,36 @@ namespace InstaRoomWeb.Controllers
             if (reservaFormModel.availabilityError) return View(reservaFormModel);
             
             AspNetUser user = db.AspNetUsers.FirstOrDefault(u => u.Email == HttpContext.User.Identity.Name);
+            
 
-            Reserva reserva = new Reserva(user, habitacion, reservaFormModel.getCheckIn(), reservaFormModel.getCheckOut()); 
+            this.reserva = new Reserva(user, habitacion, reservaFormModel.getCheckIn(), reservaFormModel.getCheckOut());
+            //r.Add(reserva);
+          
 
             TempData["reserva"] = reserva;
+            r.Add(reserva);
+
+
             return RedirectToAction("Payment");
         }
 
-        public ActionResult Payment()
+        
+        public ActionResult Payment(ReservaSess r)
         {
-            Reserva reserva = (Reserva)TempData["reserva"];
+            Reserva reserva = r[0];
 
-            //TODO price details and payment
+            AspNetUser user = db.AspNetUsers.FirstOrDefault(u => u.Email == HttpContext.User.Identity.Name);
+            Habitacion habitacion = db.Habitaciones.Find(reserva.Habitacion.Id);
+            if (Request.Form["card_number"] == null) return View(r);
+            Reserva rtemp = new Reserva(user, habitacion, reserva.check_in, reserva.check_out);
+            db.Reservas.Add(rtemp);
+            db.SaveChanges();
 
-            //Despues del pago, guardar reserva:
-            /*db.Reservas.Add(reserva);
-            db.SaveChanges();*/
-
-            return View();
+            return RedirectToAction("Index");
+          
         }
+
+        
 
     }
 }

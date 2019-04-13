@@ -45,6 +45,7 @@ namespace InstaRoomWeb.Controllers
         }
 
         // GET: Habitacions/Create
+        [Authorize(Roles = "Gestor, Administrador")]
         public ActionResult Create()
         {
             ViewBag.HotelId = new SelectList(db.Hoteles, "Id", "nombre_hotel");

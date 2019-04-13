@@ -10,6 +10,8 @@ namespace InstaRoomWeb.Models
     {
         static int HORAS_ENTRE_RESERVAS = 2;
 
+        public Reserva() { }
+
         public Reserva(AspNetUser user, Habitacion habitacion, DateTime check_in, DateTime check_out)
         {
             this.AspNetUser = user;
