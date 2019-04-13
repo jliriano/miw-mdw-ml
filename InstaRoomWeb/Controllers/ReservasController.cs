@@ -17,6 +17,10 @@ namespace InstaRoomWeb.Controllers
         private ModelsContainer db = new ModelsContainer();
         public Reserva reserva = new Reserva();
 
+
+        // GET: Reservas
+        [HttpGet]
+        [Authorize(Roles = "Gestor,Administrador")]
         public ActionResult Index()
         { 
             return View(db.Reservas.ToList());
