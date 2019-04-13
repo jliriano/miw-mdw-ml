@@ -1,4 +1,7 @@
-﻿using System;
+﻿using InstaRoomWeb.Models;
+using InstaRoomWeb.Models.Binder;
+using InstaRoomWeb.Models.Session;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +19,8 @@ namespace InstaRoomWeb
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ModelBinders.Binders.Add(typeof(ReservaSess), new ReservaBinder());
         }
     }
 }

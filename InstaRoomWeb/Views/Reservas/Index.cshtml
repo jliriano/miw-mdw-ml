@@ -1,0 +1,53 @@
+﻿@model IEnumerable<InstaRoomWeb.Models.Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.check_in)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.check_out)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_hr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_dia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_total)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.check_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.check_out)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_hr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_dia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_total)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
