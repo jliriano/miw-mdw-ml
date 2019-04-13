@@ -17,8 +17,9 @@ namespace InstaRoomWeb.Controllers
         private ModelsContainer db = new ModelsContainer();
         public Reserva reserva = new Reserva();
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
+        // GET: Reservas
+        [HttpGet]
         [Authorize(Roles = "Gestor,Administrador")]
         public ActionResult Index()
         { 
