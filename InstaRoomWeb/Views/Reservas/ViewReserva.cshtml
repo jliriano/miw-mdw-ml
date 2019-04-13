@@ -26,6 +26,9 @@
         <th>
             Precio total
         </th>
+        <th>
+            Nombre del hotel
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -49,8 +52,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.precio_total)
         </td>
+
         <td>
-            @Html.ActionLink("Reservar", "Create", "Reservas", new { id = item.Id }, null)
+            @Html.DisplayFor(modelItem => item.Habitacion.Hotel.nombre_hotel)
         </td>
     </tr>
     }
