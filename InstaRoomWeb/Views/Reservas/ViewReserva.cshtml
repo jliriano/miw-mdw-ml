@@ -1,0 +1,57 @@
+﻿@model IEnumerable<InstaRoomWeb.Models.Reserva>
+
+@{
+    ViewBag.Title = "ViewReserva";
+}
+
+<h2>ViewReserva</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Reserva
+        </th>
+        <th>
+            Check In
+        </th>
+        <th>
+            Check Out
+        </th>
+        <th>
+            Precio por hora
+        </th>
+        <th>
+            Precio por día
+        </th>
+        <th>
+            Precio total
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.check_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.check_out)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_hr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_dia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_total)
+        </td>
+        <td>
+            @Html.ActionLink("Reservar", "Create", "Reservas", new { id = item.Id }, null)
+        </td>
+    </tr>
+    }
+</table>

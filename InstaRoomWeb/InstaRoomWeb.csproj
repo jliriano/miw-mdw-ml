@@ -307,6 +307,7 @@
     <Content Include="Views\Habitacions\Index.cshtml" />
     <Content Include="Views\Habitacions\ListView.cshtml" />
     <Content Include="Views\Reservas\Index.cshtml" />
+    <Content Include="Views\Reservas\ViewReserva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
