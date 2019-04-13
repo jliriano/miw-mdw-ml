@@ -10,19 +10,29 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.check_in)
+            Check In
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.check_out)
+            Check Out
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.precio_hr)
+            Precio Hora
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.precio_dia)
+            Precio Dia
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.precio_total)
+            Precio Total
+        </th>
+        <th>
+            Codigo hotel
+        <th>
+            Nombre de hotel
+        </th>
+        <th>
+            Codigo habitación
+        <th>
+            Tipo de habitación
         </th>
         <th></th>
     </tr>
@@ -45,7 +55,19 @@
             @Html.DisplayFor(modelItem => item.precio_total)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.Habitacion.Hotel.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitacion.Hotel.nombre_hotel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitacion.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitacion.tipo_habitacion)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }
