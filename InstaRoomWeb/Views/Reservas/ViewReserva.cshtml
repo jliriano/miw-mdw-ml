@@ -12,6 +12,9 @@
             Reserva
         </th>
         <th>
+            Id de hab.
+        </th>
+        <th>
             Check In
         </th>
         <th>
@@ -36,6 +39,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitacion.Id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.check_in)
