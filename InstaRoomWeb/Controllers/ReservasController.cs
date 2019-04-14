@@ -80,7 +80,7 @@ namespace InstaRoomWeb.Controllers
 
         // GET: Reservas/ViewReserva
         [Authorize(Roles = "Cliente")]
-        public ActionResult ViewReserva([Bind(Include = "Id,check_in,check_out,precio_hr,precio_dia,precio_total,nombre_hotel")]  ReservaSess r)
+        public ActionResult ViewReserva()
         {
             AspNetUser user = db.AspNetUsers.FirstOrDefault(u => u.Email == HttpContext.User.Identity.Name);
             // Reserva reserva = db.Reservas.Find(id);
@@ -88,14 +88,11 @@ namespace InstaRoomWeb.Controllers
             {
                 return HttpNotFound();
             }
-            if (r == null)
-            {
-                return HttpNotFound();
-            }
+            
             
            
             return View(db.Reservas.Where(res => res.AspNetUser.Id == user.Id).ToList());
-            return View(r);
+            
         }
 
     }
