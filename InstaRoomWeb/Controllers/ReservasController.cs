@@ -63,19 +63,18 @@ namespace InstaRoomWeb.Controllers
         }
 
         
-        public ActionResult Payment(ReservaSess r)
+        public ActionResult Payment(ReservaSess reservaSession)
         {
-            Reserva reserva = r[0];
-
+            Reserva dataReservation = reservaSession[0];
             AspNetUser user = db.AspNetUsers.FirstOrDefault(u => u.Email == HttpContext.User.Identity.Name);
-            Habitacion habitacion = db.Habitaciones.Find(reserva.Habitacion.Id);
-            if (Request.Form["card_number"] == null) return View(r);
-            Reserva rtemp = new Reserva(user, habitacion, reserva.check_in, reserva.check_out);
-            db.Reservas.Add(rtemp);
+            Habitacion habitacion = db.Habitaciones.Find(dataReservation.Habitacion.Id);
+
+            if (Request.Form["card_number"] == null) return View(reservaSession);
+            Reserva newReservation = new Reserva(user, habitacion, dataReservation.check_in, dataReservation.check_out);
+            db.Reservas.Add(newReservation);
             db.SaveChanges();
 
             return RedirectToAction("Index");
-          
         }
 
         // GET: Reservas/ViewReserva
