@@ -1,14 +1,10 @@
 ﻿@model IEnumerable<InstaRoomWeb.Models.Reserva>
 @{
     ViewBag.Title = "Payment";
-    //var reserva = TempData["reserva"] as InstaRoomWeb.Models.Reserva;
 }
 
-
-
 <h2>Payment</h2>
-
-<h3>Detalles reserva</h3>
+<h3>Detalles reserva:</h3>
 
 <table class="table">
     <tr>
@@ -16,13 +12,13 @@
             Servicios
         </th>
         <th>
-            Tipo Habitacion
+            Tipo Habitación
         </th>
         <th>
-            Precio Dia
+            Precio por Día
         </th>
         <th>
-            Precio Hora
+            Precio por Hora
         </th>
         <th>
             Precio Total
@@ -50,9 +46,7 @@
         </td>
     </tr>
     }
-
 </table>
-
 
 @using (Html.BeginForm("Payment", "Reservas", FormMethod.Post))
 { 
