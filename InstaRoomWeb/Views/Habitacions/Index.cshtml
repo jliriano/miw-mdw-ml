@@ -3,30 +3,18 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-            Tipo de Habitación
-        </th>
-        <th>
-            Servicios
-        </th>
-        <th>
-            Precio por hora
-        </th>
-        <th>
-            Precio por día
-        </th>
-        <th>
-            Hotel
-        </th>
-        <th></th>
+        <th> Tipo de Habitación </th>
+        <th> Servicios </th>
+        <th> Precio por hora</th>
+        <th> Precio por día</th>
+        <th> Hotel</th>
+        
     </tr>
 
     @foreach (var item in Model)

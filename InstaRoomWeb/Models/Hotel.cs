@@ -11,7 +11,8 @@ namespace InstaRoomWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Hotel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,13 @@ namespace InstaRoomWeb.Models
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public string nombre_hotel { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public string nombre_director { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public string direccion_postal { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio")]
         public string imagen_hotel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
