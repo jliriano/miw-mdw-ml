@@ -20,21 +20,6 @@ namespace InstaRoomWeb.Controllers
             return View(db.Hoteles.ToList());
         }
 
-        // GET: Hotels/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Hotel hotel = db.Hoteles.Find(id);
-            if (hotel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(hotel);
-        }
-
         // GET: Hotels/Create
         public ActionResult Create()
         {
@@ -42,8 +27,6 @@ namespace InstaRoomWeb.Controllers
         }
 
         // POST: Hotels/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles ="Gestor,Administrador")]
@@ -59,9 +42,5 @@ namespace InstaRoomWeb.Controllers
             return View(hotel);
         }
 
-        
-        
-
-       
     }
 }
