@@ -35,7 +35,6 @@ namespace InstaRoomWeb.Models
 
         [Display(Name = "Remember this browser?")]
         public bool RememberBrowser { get; set; }
-
         public bool RememberMe { get; set; }
     }
 
